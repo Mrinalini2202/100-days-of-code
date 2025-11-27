@@ -1,34 +1,25 @@
 #include <stdio.h>
 
 int main() {
-    float percentage;
-    char grade;
+    int percentage;
 
-    
     printf("Enter percentage (0-100): ");
-    scanf("%f", &percentage);
+    scanf("%d", &percentage);
 
-    
-    if (percentage < 0 || percentage > 100) {
-        printf("Invalid percentage. Please enter a value between 0 and 100.\n");
-        return 1;
-    }
-
-    
-    if (percentage >= 90) {
-        grade = 'A';
+    if (percentage >= 90 && percentage <= 100) {
+        printf("Grade A\n");
     } else if (percentage >= 80) {
-        grade = 'B';
+        printf("Grade B\n");
     } else if (percentage >= 70) {
-        grade = 'C';
+        printf("Grade C\n");
     } else if (percentage >= 60) {
-        grade = 'D';
+        printf("Grade D\n");
+    } else if (percentage >= 0) {
+        printf("Grade F\n");
     } else {
-        grade = 'F';
+        printf("Invalid percentage entered!\n");
     }
-
-    
-    printf("Percentage: %.2f%%, Grade: %c\n", percentage, grade);
 
     return 0;
 }
+
