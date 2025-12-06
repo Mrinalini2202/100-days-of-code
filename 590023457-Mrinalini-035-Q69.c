@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main(void){
+    int n,i,first,second;
+    printf("Enter size: ");
+    scanf("%d",&n);
+    int a[n];
+    printf("Enter elements: ");
+    for(i=0;i<n;i++) scanf("%d",&a[i]);
+
+    if(n<2){ printf("No second largest"); return 0; }
+
+    first=second=-1000000;
+    for(i=0;i<n;i++){
+        if(a[i]>first){
+            second=first;
+            first=a[i];
+        }
+        else if(a[i]>second && a[i]!=first)
+            second=a[i];
+    }
+
+    if(second==-1000000) printf("No second largest");
+    else printf("Second largest: %d",second);
+    return 0;
+}
